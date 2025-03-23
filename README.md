@@ -12,7 +12,7 @@ This is a Flask-based REST API for handling spatial data (points and polygons) u
 
 1. Create a PostgreSQL database:
 ```sql
-CREATE DATABASE spatial_db;
+CREATE DATABASE spatialdb;
 ```
 
 2. Enable PostGIS extension:
@@ -44,6 +44,10 @@ CREATE EXTENSION postgis;
 - **GET /api/points**
   - Retrieve all points
 
+- **DELETE /api/point/<point_id>**
+  - Delete an existing point
+  - Body: Empty
+
 ### Polygons
 
 - **POST /api/polygons**
@@ -72,6 +76,10 @@ CREATE EXTENSION postgis;
 - **GET /api/polygons**
   - Retrieve all polygons
 
+- **DELETE /api/polygon/<polygon_id>**
+  - Delete a polygon
+  - Body: Empty
+
 ## Running the Application
 
 1. Install dependencies:
@@ -82,10 +90,4 @@ pip install -r requirements.txt
 2. Run the application:
 ```bash
 python app.py
-```
-
-## Running Tests
-
-```bash
-python -m pytest
 ```
